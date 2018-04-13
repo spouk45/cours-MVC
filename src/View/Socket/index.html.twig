@@ -1,0 +1,20 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <h1>Socket</h1>
+    {{ dump(sockets) }}
+    <ul>
+        {% for socket in sockets %}
+            <li>couleur : {{ socket.color }}</li>
+        {% else %}
+            <li>Nothing to display</li>
+        {% endfor %}
+    </ul>
+
+    <form method="POST" action="socketAdd">
+       nom : <input type="text" name="name">
+       color: <input type="text" name="color">
+        <input type="submit" value="envoyer">
+
+    </form>
+{% endblock %}
